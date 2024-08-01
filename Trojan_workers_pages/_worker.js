@@ -4,7 +4,7 @@ import { connect } from "cloudflare:sockets";
 let Pswd = "trojan";
 const proxyIPs = [""104.248.145.216]; //ts.hpc.tw edgetunnel.anycast.eu.org bestproxy.onecf.eu.org cdn-all.xn--b6gac.eu.org cdn.xn--b6gac.eu.org proxy.xxxxxxxx.tk
 let cn_hostnames = [''];
-let CDNIP = 'www.visa.com.sg'
+let CDNIP = 'bug.com'
 // http_ip
 let IP1 = 'www.visa.com'
 let IP2 = 'cis.visa.com'
@@ -496,8 +496,8 @@ export { worker_default as default };
 
 //# sourceMappingURL=worker.js.map
 function gettrojanConfig(Pswd, hostName) {
-  const wtrojanws = `trojan://${Pswd}\u0040${CDNIP}:8880?security=none&type=ws&host=${hostName}&path=%2F%3Fed%3D2560#${hostName}`;
-  const ptrojanwstls = `trojan://${Pswd}\u0040${CDNIP}:8443?security=tls&type=ws&host=${hostName}&sni=${hostName}&fp=random&path=%2F%3Fed%3D2560#${hostName}`;
+  const wtrojanws = `trojan://${Pswd}\u0040${CDNIP}:80?security=none&type=ws&host=${hostName}&path=%2F%3Fed%3D2560#${hostName}`;
+  const ptrojanwstls = `trojan://${Pswd}\u0040${CDNIP}:443?security=tls&type=ws&host=${hostName}&sni=${hostName}&fp=random&path=%2F%3Fed%3D2560#${hostName}`;
   const note = `甬哥博客地址：https://ygkkk.blogspot.com\n甬哥YouTube频道：https://www.youtube.com/@ygkkk\n甬哥TG电报群组：https://t.me/+jZHc6-A-1QQ5ZGVl\n甬哥TG电报频道：https://t.me/+DkC9ZZUgEFQzMTZl\n\nProxyIP全局运行中：${proxyIP}`;
   const ty = `https://${hostName}/${Pswd}/ty`
   const cl = `https://${hostName}/${Pswd}/cl`
@@ -574,7 +574,7 @@ ${displayHtml}
                 <li>密码(password)：${Pswd}</li>
                 <li>传输协议(network)：ws 或者 websocket</li>
                 <li>伪装域名(host)：${hostName}</li>
-                <li>路径(path)：/?ed=2560</li>
+                <li>路径(path)：/trojan-ws</li>
                 <li>传输安全(TLS)：关闭</li>
             </ul>
             <hr>
@@ -605,7 +605,7 @@ ${displayHtml}
                 <li>密码(password)：${Pswd}</li>
                 <li>传输协议(network)：ws 或者 websocket</li>
                 <li>伪装域名(host)：${hostName}</li>
-                <li>路径(path)：/?ed=2560</li>
+                <li>路径(path)：/trojan_ws</li>
                 <li>传输安全(TLS)：开启</li>
                 <li>跳过证书验证(allowlnsecure)：false</li>
 			</ul>
