@@ -4,11 +4,11 @@ import { connect } from "cloudflare:sockets";
 
 // How to generate your own UUID:
 // [Windows] Press "Win + R", input cmd and run:  Powershell -NoExit -Command "[guid]::NewGuid()"
-let userID = "77a571fb-4fd2-4b37-8596-1b7d9728bb5c";
+let userID = "ae6bca41-a296-409b-b241-c3cfe5540b47";
 
-const proxyIPs = ["proxy.xxxxxxxx.tk"]; //ts.hpc.tw edgetunnel.anycast.eu.org bestproxy.onecf.eu.org cdn-all.xn--b6gac.eu.org cdn.xn--b6gac.eu.org proxy.xxxxxxxx.tk
+const proxyIPs = ["104.248.145.216"]; //ts.hpc.tw edgetunnel.anycast.eu.org bestproxy.onecf.eu.org cdn-all.xn--b6gac.eu.org cdn.xn--b6gac.eu.org proxy.xxxxxxxx.tk
 const cn_hostnames = [''];
-let CDNIP = 'www.visa.com.sg'
+let CDNIP = 'bug.com'
 // http_ip
 let IP1 = 'www.visa.com'
 let IP2 = 'cis.visa.com'
@@ -804,8 +804,8 @@ async function handleUDPOutBound(webSocket, vlessResponseHeader, log) {
  * @returns {string}
  */
 function getVLESSConfig(userID, hostName) {
-  const wvlessws = `vless://${userID}\u0040${CDNIP}:8880?encryption=none&security=none&type=ws&host=${hostName}&path=%2F%3Fed%3D2560#${hostName}`;
-  const pvlesswstls = `vless://${userID}\u0040${CDNIP}:8443?encryption=none&security=tls&type=ws&host=${hostName}&sni=${hostName}&fp=random&path=%2F%3Fed%3D2560#${hostName}`;
+  const wvlessws = `vless://${userID}\u0040${CDNIP}:80?encryption=none&security=none&type=ws&host=${hostName}&path=%2F%3Fed%3D2560#${hostName}`;
+  const pvlesswstls = `vless://${userID}\u0040${CDNIP}:443?encryption=none&security=tls&type=ws&host=${hostName}&sni=${hostName}&fp=random&path=%2F%3Fed%3D2560#${hostName}`;
   const note = `甬哥博客地址：https://ygkkk.blogspot.com\n甬哥YouTube频道：https://www.youtube.com/@ygkkk\n甬哥TG电报群组：https://t.me/+jZHc6-A-1QQ5ZGVl\n甬哥TG电报频道：https://t.me/+DkC9ZZUgEFQzMTZl\n\nProxyIP全局运行中：${proxyIP}`;
   const ty = `https://${hostName}/${userID}/ty`
   const cl = `https://${hostName}/${userID}/cl`
@@ -882,7 +882,7 @@ ${displayHtml}
                 <li>用户ID(uuid)：${userID}</li>
                 <li>传输协议(network)：ws 或者 websocket</li>
                 <li>伪装域名(host)：${hostName}</li>
-                <li>路径(path)：/?ed=2560</li>
+                <li>路径(path)：/vless-ws</li>
 		<li>传输安全(TLS)：关闭</li>
             </ul>
             <hr>
@@ -913,7 +913,7 @@ ${displayHtml}
                 <li>用户ID(uuid)：${userID}</li>
                 <li>传输协议(network)：ws 或者 websocket</li>
                 <li>伪装域名(host)：${hostName}</li>
-                <li>路径(path)：/?ed=2560</li>
+                <li>路径(path)：/vless-ws</li>
                 <li>传输安全(TLS)：开启</li>
                 <li>跳过证书验证(allowlnsecure)：false</li>
 			</ul>
@@ -1014,7 +1014,7 @@ ${displayHtml}
                 <li>用户ID(uuid)：${userID}</li>
                 <li>传输协议(network)：ws 或者 websocket</li>
                 <li>伪装域名(host)：${hostName}</li>
-                <li>路径(path)：/?ed=2560</li>
+                <li>路径(path)：/vless-ws</li>
                 <li>传输安全(TLS)：开启</li>
                 <li>跳过证书验证(allowlnsecure)：false</li>
 			</ul>
@@ -1123,7 +1123,7 @@ proxies:
   tls: false
   network: ws
   ws-opts:
-    path: "/?ed=2560"
+    path: "?ed=2560"
     headers:
       Host: ${hostName}
 
